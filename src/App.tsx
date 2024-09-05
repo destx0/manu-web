@@ -7,20 +7,10 @@ import { Button } from "@/components/ui/button";
 function App() {
 	return (
 		<Router>
-			<div className="container mx-auto p-4">
-				<nav className="mb-4">
-					<Link to="/">
-						<Button variant="outline" className="mr-2">Home</Button>
-					</Link>
-					<Link to="/add-hospital">
-						<Button variant="outline">Add Hospital</Button>
-					</Link>
-				</nav>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="/add-hospital" element={<AddHospital />} />
-				</Routes>
-			</div>
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/add-hospital" element={<AddHospital />} />
+			</Routes>
 		</Router>
 	);
 }

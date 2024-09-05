@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Hospital, MapPin, Phone, Clock, Bed, Image, Car } from 'lucide-react';
+import { Hospital, MapPin, Phone, Clock, Bed, Image, Car, Home } from 'lucide-react';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../firebase';
+import { Link } from 'react-router-dom';
 
 export function AddHospital() {
   const [formData, setFormData] = useState({
@@ -139,6 +140,22 @@ export function AddHospital() {
           Add Hospital
         </Button>
       </form>
+      <div className="mt-6 flex justify-between">
+        <Button type="submit" className="w-1/3 mr-2">
+          Add Hospital
+        </Button>
+        <Link to="/edit-hospitals" className="w-1/3 mx-2">
+          <Button className="w-full" variant="outline">
+            Edit Hospitals
+          </Button>
+        </Link>
+        <Link to="/" className="w-1/3 ml-2">
+          <Button className="w-full" variant="secondary">
+            <Home className="w-4 h-4 mr-2" />
+            Home
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

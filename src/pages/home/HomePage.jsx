@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SearchBar } from "./components/SearchBar";
 import { HospitalList } from "./components/HospitalList";
-import { Hospital, Plus } from "lucide-react";
+import { Hospital, Plus, Edit } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function HomePage() {
@@ -30,13 +30,22 @@ export function HomePage() {
 			<footer className="bg-indigo-800 text-white py-4 mt-8 -mb-8">
 				<div className="container mx-auto px-4 flex justify-between items-center">
 					<p>&copy; 2023 Hospital Bed Finder</p>
-					<Link
-						to="/add-hospital"
-						className="flex items-center hover:text-indigo-200"
-					>
-						<Plus className="w-5 h-5 mr-1" />
-						Add Hospital
-					</Link>
+					<div className="flex space-x-4">
+						<Link
+							to="/add-hospital"
+							className="flex items-center hover:text-indigo-200"
+						>
+							<Plus className="w-5 h-5 mr-1" />
+							Add Hospital
+						</Link>
+						<Link
+							to="/edit-hospitals"
+							className="flex items-center hover:text-indigo-200"
+						>
+							<Edit className="w-5 h-5 mr-1" />
+							Edit Hospitals
+						</Link>
+					</div>
 				</div>
 			</footer>
 		</div>

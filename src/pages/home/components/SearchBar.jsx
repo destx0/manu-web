@@ -16,7 +16,7 @@ export function SearchBar({ onSearch }) {
 				type="text"
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
-				placeholder="Search by locality"
+				placeholder="Search by department"
 				className="flex-grow"
 			/>
 			<Button type="submit">Search</Button>

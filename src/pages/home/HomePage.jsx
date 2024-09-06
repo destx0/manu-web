@@ -32,13 +32,7 @@ export function HomePage() {
 				<div className="container mx-auto px-4 flex justify-between items-center">
 					<p>&copy; 2024 Hospital Bed Finder</p>
 					<div className="flex space-x-4">
-						<Link
-							to="/add-hospital"
-							className="flex items-center hover:text-indigo-200"
-						>
-							<Plus className="w-5 h-5 mr-1" />
-							Add Department
-						</Link>
+						
 						<Link
 							to="/edit-hospitals"
 							className="flex items-center hover:text-indigo-200"

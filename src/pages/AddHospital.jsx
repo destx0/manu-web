@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Hospital, MapPin, Phone, Clock, Bed, Image, Car, Home } from 'lucide-react';
+import { Hospital, MapPin, Phone, Clock, Bed, Image, Home } from 'lucide-react';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../firebase';
 import { Link } from 'react-router-dom';
@@ -14,35 +14,33 @@ export function AddHospital() {
     phone: '',
     availableBeds: '',
     imageUrl: '',
-    distance: '',
-    time: '',
-    description: '',
+    waitTime: '',
+    isOpen: true,
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const docRef = await addDoc(collection(db, "hospitals"), formData);
+      const docRef = await addDoc(collection(db, "hospitalSections"), formData);
       console.log("Document written with ID: ", docRef.id);
-      // Reset form after successful submission
       setFormData({
         name: '',
         locality: '',
         phone: '',
         availableBeds: '',
         imageUrl: '',
-        distance: '',
-        time: '',
-        description: '',
+        waitTime: '',
+        isOpen: true,
       });
-      alert("Hospital added successfully!");
+      alert("Hospital section added successfully!");
     } catch (error) {
       console.error("Error adding document: ", error);
-      alert("Error adding hospital. Please try again.");
+      alert("Error adding hospital section. Please try again.");
     }
   };
 
@@ -50,7 +48,7 @@ export function AddHospital() {
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-6 flex items-center">
         <Hospital className="w-8 h-8 mr-2" />
-        Add New Hospital
+        Add New Hospital Section
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex items-center">
@@ -59,7 +57,7 @@ export function AddHospital() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Hospital Name"
+            placeholder="Section Name"
             className="flex-grow"
           />
         </div>
@@ -69,7 +67,7 @@ export function AddHospital() {
             name="locality"
             value={formData.locality}
             onChange={handleChange}
-            placeholder="Locality"
+            placeholder="Floor"
             className="flex-grow"
           />
         </div>
@@ -104,52 +102,38 @@ export function AddHospital() {
             className="flex-grow"
           />
         </div>
-        <div className="flex space-x-4">
-          <div className="flex items-center flex-1">
-            <Car className="w-5 h-5 mr-2 text-gray-500" />
-            <Input
-              name="distance"
-              value={formData.distance}
-              onChange={handleChange}
-              placeholder="Distance (km)"
-              type="number"
-              step="0.1"
-              className="flex-grow"
-            />
-          </div>
-          <div className="flex items-center flex-1">
-            <Clock className="w-5 h-5 mr-2 text-gray-500" />
-            <Input
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-              placeholder="Time (mins)"
-              type="number"
-              className="flex-grow"
-            />
-          </div>
+        <div className="flex items-center">
+          <Clock className="w-5 h-5 mr-2 text-gray-500" />
+          <Input
+            name="waitTime"
+            value={formData.waitTime}
+            onChange={handleChange}
+            placeholder="Wait Time (mins)"
+            type="number"
+            className="flex-grow"
+          />
         </div>
-        <Textarea
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          placeholder="Hospital Description"
-          rows={4}
-        />
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            name="isOpen"
+            checked={formData.isOpen}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          <label>Is Open</label>
+        </div>
         <Button type="submit" className="w-full">
-          Add Hospital
+          Add Hospital Section
         </Button>
       </form>
       <div className="mt-6 flex justify-between">
-        <Button type="submit" className="w-1/3 mr-2">
-          Add Hospital
-        </Button>
-        <Link to="/edit-hospitals" className="w-1/3 mx-2">
+        <Link to="/edit-hospitals" className="w-1/2 mr-2">
           <Button className="w-full" variant="outline">
-            Edit Hospitals
+            Edit Hospital Sections
           </Button>
         </Link>
-        <Link to="/" className="w-1/3 ml-2">
+        <Link to="/" className="w-1/2 ml-2">
           <Button className="w-full" variant="secondary">
             <Home className="w-4 h-4 mr-2" />
             Home

@@ -18,10 +18,10 @@ export function HomePage() {
 				<header className="text-center mb-8">
 					<h1 className="text-4xl font-bold text-indigo-800 flex items-center justify-center">
 						<Hospital className="w-10 h-10 mr-2" />
-						Hospital Bed Finder
+						Delhi Hospital Bed Finder
 					</h1>
 					<p className="text-gray-600 mt-2">
-						Find available hospital beds in your area
+						Find available beds in different sections of Delhi Hospital
 					</p>
 				</header>
 				<SearchBar onSearch={handleSearch} />

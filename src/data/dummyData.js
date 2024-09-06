@@ -6,7 +6,8 @@ export const hospitalSections = [
 		phone: "(011) 2245-6789",
 		availableBeds: 20,
 		isOpen: true,
-		imageUrl: "https://example.com/emergency-dept.jpg",
+		imageUrl:
+			"https://www.ajhospital.in/storage/files/Dept/emergency/emergency2.jpg",
 		waitTime: 15,
 	},
 	{
@@ -16,7 +17,8 @@ export const hospitalSections = [
 		phone: "(011) 5567-2345",
 		availableBeds: 12,
 		isOpen: true,
-		imageUrl: "https://example.com/icu.jpg",
+		imageUrl:
+			"https://5.imimg.com/data5/SELLER/Default/2022/2/RH/LE/WD/20848310/icu-unit-1.jpg",
 		waitTime: 0,
 	},
 	{
@@ -26,7 +28,8 @@ export const hospitalSections = [
 		phone: "(011) 3345-7654",
 		availableBeds: 15,
 		isOpen: true,
-		imageUrl: "https://example.com/pediatrics.jpg",
+		imageUrl:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-EENDI59oR865kODDc2UPhBU5Lk9CBLxrhQ&s",
 		waitTime: 30,
 	},
 	{
@@ -36,7 +39,8 @@ export const hospitalSections = [
 		phone: "(011) 7654-8765",
 		availableBeds: 8,
 		isOpen: true,
-		imageUrl: "https://example.com/maternity.jpg",
+		imageUrl:
+			"https://www.shutterstock.com/image-photo/maternity-ward-indian-government-hospital-260nw-1475843282.jpg",
 		waitTime: 45,
 	},
 	{
@@ -46,7 +50,8 @@ export const hospitalSections = [
 		phone: "(011) 5432-2345",
 		availableBeds: 10,
 		isOpen: true,
-		imageUrl: "https://example.com/orthopedics.jpg",
+		imageUrl:
+			"https://care.edu.in/wp-content/uploads/2022/06/Ortho_Inpatient_1.jpg",
 		waitTime: 60,
 	},
 	{
@@ -56,7 +61,8 @@ export const hospitalSections = [
 		phone: "(011) 8765-9876",
 		availableBeds: 15,
 		isOpen: true,
-		imageUrl: "https://example.com/cardiology.jpg",
+		imageUrl:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmirlRmEACpP5Oy0HCW6fyngo-Nq0_v9x_1g&s",
 		waitTime: 40,
 	},
 	{
@@ -66,7 +72,8 @@ export const hospitalSections = [
 		phone: "(011) 2345-8765",
 		availableBeds: 18,
 		isOpen: true,
-		imageUrl: "https://example.com/neurology.jpg",
+		imageUrl:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaCYcuYDG0GVftZNIwdakwvB9YBHEqhgLc_w&s",
 		waitTime: 55,
 	},
 	{
@@ -76,7 +83,8 @@ export const hospitalSections = [
 		phone: "(011) 6789-3456",
 		availableBeds: 5,
 		isOpen: true,
-		imageUrl: "https://example.com/oncology.jpg",
+		imageUrl:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2inwTS92WKAtVrUH-uatDMaLGmY0kN1fJZg&s",
 		waitTime: 20,
 	},
 	{
@@ -86,7 +94,8 @@ export const hospitalSections = [
 		phone: "(011) 5678-2345",
 		availableBeds: 7,
 		isOpen: false,
-		imageUrl: "https://example.com/psychiatry.jpg",
+		imageUrl:
+			"https://c8.alamy.com/comp/R6FM12/indian-hospital-general-ward-india-R6FM12.jpg",
 		waitTime: 0,
 	},
 	{
@@ -96,7 +105,8 @@ export const hospitalSections = [
 		phone: "(011) 2345-4321",
 		availableBeds: 14,
 		isOpen: true,
-		imageUrl: "https://example.com/general-surgery.jpg",
+		imageUrl:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2inwTS92WKAtVrUH-uatDMaLGmY0kN1fJZg&s",
 		waitTime: 35,
 	},
 ];
